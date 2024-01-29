@@ -31,7 +31,7 @@ jobs:
           name: "Say japan"
           command: "echo Hello, Japan"
 
-  workspace:
+  say-workspace:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/configuration-reference/#executor-job
     docker:
@@ -48,7 +48,7 @@ jobs:
           paths:
             - "file.txt"
 
-  ls:
+  say-ls:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/configuration-reference/#executor-job
     docker:
@@ -71,8 +71,8 @@ workflows:
     jobs:
       - say-name
       - say-japan
-      - workspace
-      - ls:
+      - say-workspace
+      - say-ls:
           requires:
-            - say name
-            - workspace
+            - say-name
+            - say-workspace
