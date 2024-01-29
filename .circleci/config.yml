@@ -102,5 +102,7 @@ workflows:
             - say-name
             - say-goodbye
       - say-workspace
-      - say-ls
+      - say-ls:
+          requires:
+            - say-workspace
       - say-secret
