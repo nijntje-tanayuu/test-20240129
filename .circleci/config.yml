@@ -64,7 +64,6 @@ jobs:
           command: "ls /tmp/workspace/file.txt"
 
 
-
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:
@@ -72,8 +71,8 @@ workflows:
     jobs:
       - say-name
       - say-japan
-      - say workspace
+      - workspace
       - ls:
           requires:
             - say name
-            - say workspace
+            - workspace
